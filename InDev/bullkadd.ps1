@@ -19,14 +19,19 @@
 Install-Module -Name MicrosoftTeams
 Connect-MicrosoftTeams
 Get-Team
-#csv file:
+
+#csv file model:
 #mail
 #user1@mail.com
 #user2@mail.com
 
-Import-Csv -Path "D:\Documentos\GitHub\Office356Edu\last\BuklMemberAdd\mail.csv" 
+$file = Read-Host -Prompt "Insira o nome e caminho do ficheiro"
+$gid = Read-Host -Prompt "Insira o ID da equipe"
+#Import-Csv -Path "D:\Documentos\GitHub\Office356Edu\last\BuklMemberAdd\mail.csv" 
+Import-Csv -Path $file 
 $users = Import-Csv -Path "Path"
 foreach ($user in $users) 
 { 
-    Add-TeamUser -GroupId 8ccb0bfc-ca85-4309-838d-bf439c250d9f -user $user
+    Add-TeamUser -GroupId $gid -user $user
+    #Add-TeamUser -GroupId 8ccb0bfc-ca85-4309-838d-bf439c250d9f -user $user
 }

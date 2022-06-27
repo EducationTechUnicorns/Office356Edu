@@ -1,0 +1,1 @@
+﻿Get-Team | Export-csv c:\teams.csv
