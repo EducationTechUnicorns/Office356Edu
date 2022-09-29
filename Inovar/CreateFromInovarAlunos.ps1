@@ -1,8 +1,8 @@
-﻿$dominio = "yourdomain.com"
+﻿$dominio = "ebaveromar.com"
 
 #Create users from INOVAR Alunos
 
-Import-CSV  C:\eb\alunos.csv  -delimiter ";"  -Header Nome,Processo | Foreach-Object{
+Import-CSV  C:\eb\DadosFiltrados.csv  -delimiter ";"  -Header Nome,Processo | Foreach-Object{
    Write-Host $_.Nome
    $mail = $_.Processo + $dominio
    Write-Host $mail
